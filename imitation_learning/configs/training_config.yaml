@@ -1,0 +1,55 @@
+# Training method
+method: "behavior_cloning"  # ["behavior_cloning", "dagger"]
+
+# General training settings
+num_epochs: 100
+batch_size: 32
+
+# Optimization settings
+optimizer: "lamb"  # ["adam", "adamw", "lamb", "adafactor"]
+learning_rate: 1.0e-4
+weight_decay: 1.0e-5
+beta1: 0.9
+beta2: 0.999
+eps: 1.0e-8
+
+# Learning rate scheduling
+lr_schedule: "cosine"  # ["constant", "cosine", "linear", "exponential"]
+warmup_steps: 1000
+decay_steps: 10000
+min_lr_ratio: 0.1
+
+# Gradient clipping
+clip_grad_norm: 1.0
+clip_grad_value: null
+
+# CUDA optimization
+use_mixed_precision: true
+gradient_accumulation_steps: 1
+cuda_cache_clear_freq: 100
+prefetch_factor: 2
+num_workers: 4
+
+# Model architecture
+state_dim: 6  # [x, y, heading, velocity, steering_angle, acceleration]
+action_dim: 2  # [steering_rate, acceleration_rate]
+hidden_dim: 256
+num_layers: 3
+dropout: 0.1
+
+# Multi-modal settings
+use_images: true
+use_lidar: true
+image_size: [224, 224]
+num_points: 2048
+
+# DAgger specific settings
+dagger_beta_schedule: "linear"  # ["linear", "exponential"]
+dagger_beta_start: 1.0
+dagger_beta_end: 0.0
+
+# Logging and checkpointing
+log_interval: 10
+checkpoint_interval: 10
+use_wandb: true
+experiment_name: "autonomous_driving_imitation" 

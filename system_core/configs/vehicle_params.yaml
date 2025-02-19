@@ -1,0 +1,24 @@
+vehicle:
+  # Physical parameters
+  mass: 1500.0  # kg
+  wheelbase: 2.7  # meters
+  track_width: 1.8  # meters
+  max_steering_angle: 35.0  # degrees
+  
+  # Dynamic constraints
+  max_acceleration: 3.0  # m/s^2
+  max_deceleration: 5.0  # m/s^2
+  max_velocity: 30.0  # m/s
+  max_lateral_acceleration: 3.0  # m/s^2
+  
+  # Powertrain parameters
+  engine:
+    max_power: 150.0  # kW
+    max_torque: 300.0  # Nm
+    efficiency: 0.9
+    
+  # Tire parameters
+  tires:
+    cornering_stiffness_front: 80000.0  # N/rad
+    cornering_stiffness_rear: 80000.0  # N/rad
+    friction_coefficient: 0.8 

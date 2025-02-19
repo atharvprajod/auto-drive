@@ -1,0 +1,29 @@
+lqr_controller:
+  # State weights
+  Q_matrix:
+    position_x: 1.0
+    position_y: 1.0
+    heading: 2.0
+    velocity: 0.5
+    steering_angle: 0.1
+    
+  # Control weights
+  R_matrix:
+    steering_rate: 1.0
+    acceleration: 0.1
+    
+  # Controller parameters
+  update_frequency: 100  # Hz
+  prediction_horizon: 3.0  # seconds
+  discretization_dt: 0.01  # seconds
+  
+  # Constraints
+  constraints:
+    max_steering_rate: 0.5  # rad/s
+    max_acceleration_rate: 2.0  # m/s^3
+    
+  # Numerical solver parameters
+  solver:
+    max_iterations: 100
+    convergence_tolerance: 1e-6
+    regularization: 1e-8 

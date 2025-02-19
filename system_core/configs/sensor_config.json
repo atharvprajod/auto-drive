@@ -1,0 +1,43 @@
+{
+    "lidar": {
+        "model": "Velodyne-64",
+        "frequency": 10,
+        "points_per_second": 1300000,
+        "range": 120,
+        "vertical_fov": [-24.9, 2.0],
+        "horizontal_fov": 360,
+        "position": [0.0, 0.0, 1.8]
+    },
+    "cameras": {
+        "front": {
+            "resolution": [1920, 1080],
+            "fps": 30,
+            "fov": 90,
+            "position": [0.0, 0.0, 1.5],
+            "distortion_params": [0.0, 0.0, 0.0, 0.0, 0.0]
+        }
+    },
+    "radar": {
+        "front": {
+            "frequency": 50,
+            "range": 200,
+            "fov": 60,
+            "position": [0.0, 0.0, 0.5]
+        }
+    },
+    "imu": {
+        "frequency": 100,
+        "gyro_noise": 0.1,
+        "accel_noise": 0.1,
+        "position": [0.0, 0.0, 0.8]
+    },
+    "gps": {
+        "frequency": 10,
+        "position_accuracy": 0.5,
+        "velocity_accuracy": 0.1
+    },
+    "fusion": {
+        "method": "extended_kalman_filter",
+        "sync_tolerance": 0.01
+    }
+} 
